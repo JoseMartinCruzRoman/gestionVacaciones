@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_VACACIONESModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DB_VACACIONESModelStoreContainer">
+    <EntitySet Name="tb_empleado" EntityType="DB_VACACIONESModel.Store.tb_empleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_tipo_identificacion" EntityType="DB_VACACIONESModel.Store.tb_tipo_identificacion" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tb_empleado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="id_tipo_identificacion" Type="int" Nullable="false" />
+    <Property Name="numero_identificacion" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" Nullable="false" />
+    <Property Name="salario_base_mensual" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="direccion" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_tipo_identificacion">
+    <Key>
+      <PropertyRef Name="id_identificacion" />
+    </Key>
+    <Property Name="id_identificacion" Type="int" Nullable="false" />
+    <Property Name="tipo_identificacion" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Function Name="buscar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_empleado" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crear_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombres" Type="nvarchar" Mode="In" />
+    <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_tipo_identificacion" Type="int" Mode="In" />
+    <Parameter Name="numero_identificiacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+    <Parameter Name="salario_base" Type="decimal" Mode="In" />
+    <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="edit_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="editar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empleado" Type="int" Mode="In" />
+    <Parameter Name="nombres" Type="nvarchar" Mode="In" />
+    <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_tipo_identificacion" Type="int" Mode="In" />
+    <Parameter Name="numero_identificiacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+    <Parameter Name="salario_base" Type="decimal" Mode="In" />
+    <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="eliminar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empleado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="lista_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="visualizar_vacaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechainicio" Type="date" Mode="In" />
+    <Parameter Name="fechafin" Type="date" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="diastomados" Type="int" Mode="In" />
+  </Function>
+</Schema>

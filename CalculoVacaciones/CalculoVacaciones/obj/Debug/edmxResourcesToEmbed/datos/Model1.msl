@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_VACACIONESModelStoreContainer" CdmEntityContainer="DB_VACACIONESEntities6">
+    <EntitySetMapping Name="tb_empleado">
+      <EntityTypeMapping TypeName="DB_VACACIONESModel.tb_empleado">
+        <MappingFragment StoreEntitySet="tb_empleado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="id_tipo_identificacion" ColumnName="id_tipo_identificacion" />
+          <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipo_identificacion">
+      <EntityTypeMapping TypeName="DB_VACACIONESModel.tb_tipo_identificacion">
+        <MappingFragment StoreEntitySet="tb_tipo_identificacion">
+          <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+          <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="buscar_empleado" FunctionName="DB_VACACIONESModel.Store.buscar_empleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_VACACIONESModel.buscar_empleado_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+          <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+          <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crear_empleado" FunctionName="DB_VACACIONESModel.Store.crear_empleado" />
+    <FunctionImportMapping FunctionImportName="edit_empleado" FunctionName="DB_VACACIONESModel.Store.edit_empleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_VACACIONESModel.edit_empleado_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+          <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+          <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="editar_empleado" FunctionName="DB_VACACIONESModel.Store.editar_empleado" />
+    <FunctionImportMapping FunctionImportName="eliminar_empleado" FunctionName="DB_VACACIONESModel.Store.eliminar_empleado" />
+    <FunctionImportMapping FunctionImportName="lista_empleado" FunctionName="DB_VACACIONESModel.Store.lista_empleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_VACACIONESModel.lista_empleado_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+          <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+          <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="visualizar_vacaciones" FunctionName="DB_VACACIONESModel.Store.visualizar_vacaciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_VACACIONESModel.visualizar_vacaciones_Result">
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="DIAS_ACUMULADOS" ColumnName="DIAS_ACUMULADOS" />
+          <ScalarProperty Name="DIAS_TOMADOS" ColumnName="DIAS_TOMADOS" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

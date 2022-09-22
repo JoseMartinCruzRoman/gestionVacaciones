@@ -1,0 +1,180 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CalculoVacaciones
+</name>
+</assembly>
+<members>
+<member name="T:CalculoVacaciones.DB_VACACIONESDataSet2.visualizar_vacacionesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2.visualizar_vacacionesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2.visualizar_vacacionesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.visualizar_vacacionesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.UpdateUpdatedRows(CalculoVacaciones.DB_VACACIONESDataSet2,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.UpdateInsertedRows(CalculoVacaciones.DB_VACACIONESDataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.UpdateDeletedRows(CalculoVacaciones.DB_VACACIONESDataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.UpdateAll(CalculoVacaciones.DB_VACACIONESDataSet2)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet2TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet.lista_empleadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet.lista_empleadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet.lista_empleadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.lista_empleadoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(CalculoVacaciones.DB_VACACIONESDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(CalculoVacaciones.DB_VACACIONESDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(CalculoVacaciones.DB_VACACIONESDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.UpdateAll(CalculoVacaciones.DB_VACACIONESDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1.tb_tipo_identificacionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1.tb_tipo_identificacionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1.tb_tipo_identificacionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.tb_tipo_identificacionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(CalculoVacaciones.DB_VACACIONESDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(CalculoVacaciones.DB_VACACIONESDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(CalculoVacaciones.DB_VACACIONESDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.UpdateAll(CalculoVacaciones.DB_VACACIONESDataSet1)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:CalculoVacaciones.DB_VACACIONESDataSet1TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:CalculoVacaciones.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CalculoVacaciones.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CalculoVacaciones.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

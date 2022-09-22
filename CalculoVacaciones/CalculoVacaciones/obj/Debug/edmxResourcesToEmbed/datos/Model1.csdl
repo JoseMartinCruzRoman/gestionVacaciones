@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_VACACIONESModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_VACACIONESEntities6" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_empleado" EntityType="DB_VACACIONESModel.tb_empleado" />
+    <EntitySet Name="tb_tipo_identificacion" EntityType="DB_VACACIONESModel.tb_tipo_identificacion" />
+    <FunctionImport Name="buscar_empleado" ReturnType="Collection(DB_VACACIONESModel.buscar_empleado_Result)">
+      <Parameter Name="nombre_empleado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="crear_empleado">
+      <Parameter Name="nombres" Mode="In" Type="String" />
+      <Parameter Name="apellidos" Mode="In" Type="String" />
+      <Parameter Name="id_tipo_identificacion" Mode="In" Type="Int32" />
+      <Parameter Name="numero_identificiacion" Mode="In" Type="String" />
+      <Parameter Name="fecha_ingreso" Mode="In" Type="DateTime" />
+      <Parameter Name="salario_base" Mode="In" Type="Decimal" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="edit_empleado" ReturnType="Collection(DB_VACACIONESModel.edit_empleado_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="editar_empleado">
+      <Parameter Name="id_empleado" Mode="In" Type="Int32" />
+      <Parameter Name="nombres" Mode="In" Type="String" />
+      <Parameter Name="apellidos" Mode="In" Type="String" />
+      <Parameter Name="id_tipo_identificacion" Mode="In" Type="Int32" />
+      <Parameter Name="numero_identificiacion" Mode="In" Type="String" />
+      <Parameter Name="fecha_ingreso" Mode="In" Type="DateTime" />
+      <Parameter Name="salario_base" Mode="In" Type="Decimal" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="eliminar_empleado">
+      <Parameter Name="id_empleado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="lista_empleado" ReturnType="Collection(DB_VACACIONESModel.lista_empleado_Result)" />
+    <FunctionImport Name="visualizar_vacaciones" ReturnType="Collection(DB_VACACIONESModel.visualizar_vacaciones_Result)">
+      <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="diastomados" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tb_empleado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="id_tipo_identificacion" Type="Int32" Nullable="false" />
+    <Property Name="numero_identificacion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_ingreso" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="salario_base_mensual" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_tipo_identificacion">
+    <Key>
+      <PropertyRef Name="id_identificacion" />
+    </Key>
+    <Property Name="id_identificacion" Type="Int32" Nullable="false" />
+    <Property Name="tipo_identificacion" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <ComplexType Name="buscar_empleado_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+    <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="edit_empleado_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+    <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="lista_empleado_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+    <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="visualizar_vacaciones_Result">
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="DIAS_ACUMULADOS" Nullable="true" />
+    <Property Type="Int32" Name="DIAS_TOMADOS" Nullable="true" />
+    <Property Type="Int32" Name="SALDO" Nullable="true" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_VACACIONESModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DB_VACACIONESModelStoreContainer">
+          <EntitySet Name="tb_empleado" EntityType="DB_VACACIONESModel.Store.tb_empleado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_tipo_identificacion" EntityType="DB_VACACIONESModel.Store.tb_tipo_identificacion" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tb_empleado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id_tipo_identificacion" Type="int" Nullable="false" />
+          <Property Name="numero_identificacion" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha_ingreso" Type="date" Nullable="false" />
+          <Property Name="salario_base_mensual" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="direccion" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_tipo_identificacion">
+          <Key>
+            <PropertyRef Name="id_identificacion" />
+          </Key>
+          <Property Name="id_identificacion" Type="int" Nullable="false" />
+          <Property Name="tipo_identificacion" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Function Name="buscar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_empleado" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crear_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombres" Type="nvarchar" Mode="In" />
+          <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_tipo_identificacion" Type="int" Mode="In" />
+          <Parameter Name="numero_identificiacion" Type="nvarchar" Mode="In" />
+          <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+          <Parameter Name="salario_base" Type="decimal" Mode="In" />
+          <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="edit_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="editar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_empleado" Type="int" Mode="In" />
+          <Parameter Name="nombres" Type="nvarchar" Mode="In" />
+          <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_tipo_identificacion" Type="int" Mode="In" />
+          <Parameter Name="numero_identificiacion" Type="nvarchar" Mode="In" />
+          <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+          <Parameter Name="salario_base" Type="decimal" Mode="In" />
+          <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="eliminar_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_empleado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="lista_empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="visualizar_vacaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fechainicio" Type="date" Mode="In" />
+          <Parameter Name="fechafin" Type="date" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="diastomados" Type="int" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_VACACIONESModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_VACACIONESEntities6" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_empleado" EntityType="DB_VACACIONESModel.tb_empleado" />
+          <EntitySet Name="tb_tipo_identificacion" EntityType="DB_VACACIONESModel.tb_tipo_identificacion" />
+          <FunctionImport Name="buscar_empleado" ReturnType="Collection(DB_VACACIONESModel.buscar_empleado_Result)">
+            <Parameter Name="nombre_empleado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crear_empleado">
+            <Parameter Name="nombres" Mode="In" Type="String" />
+            <Parameter Name="apellidos" Mode="In" Type="String" />
+            <Parameter Name="id_tipo_identificacion" Mode="In" Type="Int32" />
+            <Parameter Name="numero_identificiacion" Mode="In" Type="String" />
+            <Parameter Name="fecha_ingreso" Mode="In" Type="DateTime" />
+            <Parameter Name="salario_base" Mode="In" Type="Decimal" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="edit_empleado" ReturnType="Collection(DB_VACACIONESModel.edit_empleado_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="editar_empleado">
+            <Parameter Name="id_empleado" Mode="In" Type="Int32" />
+            <Parameter Name="nombres" Mode="In" Type="String" />
+            <Parameter Name="apellidos" Mode="In" Type="String" />
+            <Parameter Name="id_tipo_identificacion" Mode="In" Type="Int32" />
+            <Parameter Name="numero_identificiacion" Mode="In" Type="String" />
+            <Parameter Name="fecha_ingreso" Mode="In" Type="DateTime" />
+            <Parameter Name="salario_base" Mode="In" Type="Decimal" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="eliminar_empleado">
+            <Parameter Name="id_empleado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="lista_empleado" ReturnType="Collection(DB_VACACIONESModel.lista_empleado_Result)" />
+          <FunctionImport Name="visualizar_vacaciones" ReturnType="Collection(DB_VACACIONESModel.visualizar_vacaciones_Result)">
+            <Parameter Name="fechainicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="diastomados" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="tb_empleado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="id_tipo_identificacion" Type="Int32" Nullable="false" />
+          <Property Name="numero_identificacion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fecha_ingreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="salario_base_mensual" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_tipo_identificacion">
+          <Key>
+            <PropertyRef Name="id_identificacion" />
+          </Key>
+          <Property Name="id_identificacion" Type="Int32" Nullable="false" />
+          <Property Name="tipo_identificacion" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="buscar_empleado_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+          <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="edit_empleado_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+          <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="lista_empleado_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" />
+          <Property Type="String" Name="tipo_identificacion" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="salario_base_mensual" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="numero_identificacion" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_identificacion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="visualizar_vacaciones_Result">
+          <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="DIAS_ACUMULADOS" Nullable="true" />
+          <Property Type="Int32" Name="DIAS_TOMADOS" Nullable="true" />
+          <Property Type="Int32" Name="SALDO" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_VACACIONESModelStoreContainer" CdmEntityContainer="DB_VACACIONESEntities6">
+          <EntitySetMapping Name="tb_empleado">
+            <EntityTypeMapping TypeName="DB_VACACIONESModel.tb_empleado">
+              <MappingFragment StoreEntitySet="tb_empleado">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="id_tipo_identificacion" ColumnName="id_tipo_identificacion" />
+                <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_tipo_identificacion">
+            <EntityTypeMapping TypeName="DB_VACACIONESModel.tb_tipo_identificacion">
+              <MappingFragment StoreEntitySet="tb_tipo_identificacion">
+                <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+                <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="buscar_empleado" FunctionName="DB_VACACIONESModel.Store.buscar_empleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_VACACIONESModel.buscar_empleado_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+                <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+                <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crear_empleado" FunctionName="DB_VACACIONESModel.Store.crear_empleado" />
+          <FunctionImportMapping FunctionImportName="edit_empleado" FunctionName="DB_VACACIONESModel.Store.edit_empleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_VACACIONESModel.edit_empleado_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+                <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+                <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="editar_empleado" FunctionName="DB_VACACIONESModel.Store.editar_empleado" />
+          <FunctionImportMapping FunctionImportName="eliminar_empleado" FunctionName="DB_VACACIONESModel.Store.eliminar_empleado" />
+          <FunctionImportMapping FunctionImportName="lista_empleado" FunctionName="DB_VACACIONESModel.Store.lista_empleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_VACACIONESModel.lista_empleado_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="salario_base_mensual" ColumnName="salario_base_mensual" />
+                <ScalarProperty Name="numero_identificacion" ColumnName="numero_identificacion" />
+                <ScalarProperty Name="id_identificacion" ColumnName="id_identificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="visualizar_vacaciones" FunctionName="DB_VACACIONESModel.Store.visualizar_vacaciones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_VACACIONESModel.visualizar_vacaciones_Result">
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="DIAS_ACUMULADOS" ColumnName="DIAS_ACUMULADOS" />
+                <ScalarProperty Name="DIAS_TOMADOS" ColumnName="DIAS_TOMADOS" />
+                <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
